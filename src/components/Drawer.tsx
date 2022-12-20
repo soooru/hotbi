@@ -18,8 +18,7 @@ function Drawer() {
       {isActive && (
         <StyledNav>
           <div>
-            {' '}
-            <button onClick={onToggle}>햄버거 메뉴</button>
+            <button onClick={onToggle}>닫기</button>
           </div>
           <div>네비게이션이에요</div>
         </StyledNav>

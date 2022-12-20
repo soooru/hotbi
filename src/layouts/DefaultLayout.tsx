@@ -1,4 +1,5 @@
-import React, { ReactNode } from 'react';
+import { ReactNode } from 'react';
+import WrapperBox from '../components/WrapperBox';
 import Header from '../components/Header';
 import Drawer from '../components/Drawer';
 import { DrawerContext } from '../contexts/DrawerContext';
@@ -9,12 +10,14 @@ interface Props {
 }
 const DetaultLayout = ({ children }: Props) => {
   return (
-    <DrawerContext>
-      <Header />
-      <Drawer />
-      {children}
-      <Outlet />
-    </DrawerContext>
+    <WrapperBox>
+      <DrawerContext>
+        <Header />
+        <Drawer />
+        {children}
+        <Outlet />
+      </DrawerContext>
+    </WrapperBox>
   );
 };
 

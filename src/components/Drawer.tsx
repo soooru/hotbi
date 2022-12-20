@@ -3,17 +3,27 @@ import useDrawerState from '../hooks/useDrawerState';
 
 const StyledNav = styled.nav`
   background: pink;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 300px;
+  height: 100vh;
 `;
 
 function Drawer() {
-  const { isActive, onToggle } = useDrawerState();
+  const { onToggle, isActive } = useDrawerState();
+
   return (
     <>
-      {isActive && <StyledNav>네비게이션 바에용</StyledNav>}
-      <button onClick={onToggle}>
-        네비게이션 바 활성 여부 훅을 만들었어요 :{' '}
-        {isActive ? 'active' : 'not-active'}
-      </button>
+      {isActive && (
+        <StyledNav>
+          <div>
+            {' '}
+            <button onClick={onToggle}>햄버거 메뉴</button>
+          </div>
+          <div>네비게이션이에요</div>
+        </StyledNav>
+      )}
     </>
   );
 }

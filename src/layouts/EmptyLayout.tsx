@@ -1,18 +1,18 @@
+import { ReactNode } from 'react';
 import { Outlet } from 'react-router-dom';
-import styled from 'styled-components';
 
-const EmptyElements = styled.section`
-  background: green;
-`;
+import WrapperBox from '../components/WrapperBox';
 
-// ----------------------------------------------------------------------
+interface Props {
+  children?: ReactNode;
+}
 
-function EmptyLayout() {
+function EmptyLayout({ children }: Props) {
   return (
-    <>
-      <EmptyElements></EmptyElements>
+    <WrapperBox>
+      {children}
       <Outlet />
-    </>
+    </WrapperBox>
   );
 }
 

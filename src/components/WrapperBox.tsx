@@ -1,5 +1,5 @@
-import { ReactNode } from 'react';
-import styled, { css } from 'styled-components';
+import { ReactNode } from "react";
+import styled from "styled-components";
 
 interface Props {
   children?: ReactNode;
@@ -11,6 +11,7 @@ const StyledWrapper = styled.div<Props>`
   height: 100%;
   min-height: 100vh;
   position: relative;
+  overflow: hidden;
 `;
 
 function WrapperBox({ children, ...props }: Props) {

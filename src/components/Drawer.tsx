@@ -1,13 +1,25 @@
-import styled from 'styled-components';
-import useDrawerState from '../hooks/useDrawerState';
+import styled, { css } from "styled-components";
+import useDrawerState from "../hooks/useDrawerState";
+import { NavLink } from "react-router-dom";
 
-const StyledNav = styled.nav`
+interface Props {
+  open: string;
+}
+
+const StyledNav = styled.nav<Props>`
   background: pink;
   position: absolute;
   left: 0;
   top: 0;
   width: 300px;
   height: 100vh;
+  transition: all 0.3s ease-in-out;
+  transform: translate(-300px);
+  ${(props) =>
+    props.open === "open" &&
+    css`
+      transform: translate(0px);
+    `}
 `;
 
 function Drawer() {
@@ -15,14 +27,27 @@ function Drawer() {
 
   return (
     <>
-      {isActive && (
-        <StyledNav>
-          <div>
-            <button onClick={onToggle}>닫기</button>
-          </div>
-          <div>네비게이션이에요</div>
-        </StyledNav>
-      )}
+      <StyledNav open={isActive ? "open" : "close"}>
+        <div>
+          <button onClick={onToggle}>닫기</button>
+        </div>
+        <div>
+          <ul onClick={onToggle}>
+            <li>
+              <NavLink to="question">question 페이지</NavLink>
+            </li>
+            <li>
+              <NavLink to="result/intp">result-intp 페이지</NavLink>
+            </li>
+            <li>
+              <NavLink to="developer">만든사람</NavLink>
+            </li>
+            <li>
+              <NavLink to="notfound">notFound 페이지</NavLink>
+            </li>
+          </ul>
+        </div>
+      </StyledNav>
     </>
   );
 }

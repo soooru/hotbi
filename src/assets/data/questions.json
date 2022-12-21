@@ -1,12 +1,12 @@
 {
   "1": {
-    "question": "질문 내용",
+    "question": "너는 감성적이니?",
     "answer1": {
-      "title": "대답내용1",
+      "title": "예",
       "score": "t"
     },
     "answer2": {
-      "title": "대답내용2",
+      "title": "아니오",
       "score": "f"
     }
   }

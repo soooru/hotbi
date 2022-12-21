@@ -1,5 +1,5 @@
-import styled from 'styled-components';
-import useDrawerState from '../hooks/useDrawerState';
+import styled from "styled-components";
+import useDrawerState from "../hooks/useDrawerState";
 
 const StyledHeader = styled.header`
   background: skyblue;
@@ -15,8 +15,8 @@ function Header() {
   return (
     <>
       <StyledHeader>
-        <button onClick={onToggle}>햄버거 메뉴</button>
-        <div>프로젝트 이름</div>
+        <button onClick={onToggle}>menu</button>
+        <div>logo</div>
       </StyledHeader>
     </>
   );

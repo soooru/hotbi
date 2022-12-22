@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import useDrawerState from "../hooks/useDrawerState";
+import styled from 'styled-components'
+import useDrawerState from 'hooks/useDrawerState'
 
 const StyledHeader = styled.header`
   background: skyblue;
@@ -8,10 +8,10 @@ const StyledHeader = styled.header`
   height: 50px;
   align-items: center;
   justify-content: space-between;
-`;
+`
 
 function Header() {
-  const { onToggle } = useDrawerState();
+  const { onToggle } = useDrawerState()
   return (
     <>
       <StyledHeader>
@@ -19,7 +19,7 @@ function Header() {
         <div>logo</div>
       </StyledHeader>
     </>
-  );
+  )
 }
 
-export default Header;
+export default Header

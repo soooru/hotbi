@@ -1,12 +1,12 @@
-import { useContext } from 'react';
-import { CounterContext } from '../contexts/DrawerContext';
+import { useContext } from 'react'
+import { CounterContext } from 'contexts/DrawerContext'
 
 function useCounterState() {
-  const value = useContext(CounterContext);
+  const value = useContext(CounterContext)
   if (value === undefined) {
-    throw new Error('undefined value');
+    throw new Error('undefined value')
   }
-  return value;
+  return value
 }
 
-export default useCounterState;
+export default useCounterState

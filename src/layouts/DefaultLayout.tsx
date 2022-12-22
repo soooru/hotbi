@@ -1,12 +1,12 @@
-import { ReactNode } from 'react';
-import WrapperBox from '../components/WrapperBox';
-import Header from '../components/Header';
-import Drawer from '../components/Drawer';
-import { DrawerContext } from '../contexts/DrawerContext';
-import { Outlet } from 'react-router-dom';
+import { ReactNode } from 'react'
+import WrapperBox from 'components/WrapperBox'
+import Header from 'components/Header'
+import Drawer from 'components/Drawer'
+import { DrawerContext } from 'contexts/DrawerContext'
+import { Outlet } from 'react-router-dom'
 
 interface Props {
-  children?: ReactNode;
+  children?: ReactNode
 }
 const DetaultLayout = ({ children }: Props) => {
   return (
@@ -18,7 +18,7 @@ const DetaultLayout = ({ children }: Props) => {
         <Outlet />
       </DrawerContext>
     </WrapperBox>
-  );
-};
+  )
+}
 
-export default DetaultLayout;
+export default DetaultLayout

@@ -34,6 +34,10 @@ function Drawer() {
         <div>
           <ul onClick={onToggle}>
             <li>
+              <NavLink to="/">처음으로</NavLink>
+            </li>
+
+            <li>
               <NavLink to="question">question 페이지</NavLink>
             </li>
             <li>

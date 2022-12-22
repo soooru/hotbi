@@ -2,7 +2,7 @@ import HelmetComponents from 'components/HelmetComponents'
 export default function Question() {
   return (
     <>
-      <HelmetComponents title=":not found" />
+      <HelmetComponents title=":질문" />
       <div>
         <div>질문 페이지</div>
         <div>질문 컴포넌트</div>

@@ -13,7 +13,9 @@ export default function Question() {
         setNumber(questionOrder + 1)
         console.log('결과를 계산한다.')
       } else {
-        console.log('모든 문제가 끝났다. 결과를 내서 result페이지로 이동한다.')
+        console.log(
+          '모든 문제가 끝났다. 계산한 결과로 result페이지로 이동한다.'
+        )
         navigate('/result/intp')
       }
     } catch (error) {

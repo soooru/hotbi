@@ -1,9 +1,9 @@
-import { ReactNode } from 'react';
-import styled, { css } from 'styled-components';
+import { ReactNode } from 'react'
+import styled, { css } from 'styled-components'
 
 interface Props {
-  children?: ReactNode;
-  mode?: string;
+  children?: ReactNode
+  mode?: string
 }
 const StyledButton = styled.button<Props>`
   padding: 6px 12px;
@@ -19,10 +19,10 @@ const StyledButton = styled.button<Props>`
       background: navy;
       border-color: navy;
     `}
-`;
+`
 
 function Button({ children, ...props }: Props) {
-  return <StyledButton {...props}>{children}</StyledButton>;
+  return <StyledButton {...props}>{children}</StyledButton>
 }
 
-export default Button;
+export default Button

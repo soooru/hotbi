@@ -1,10 +1,10 @@
-import { ReactNode } from 'react';
-import { Outlet } from 'react-router-dom';
+import { ReactNode } from 'react'
+import { Outlet } from 'react-router-dom'
 
-import WrapperBox from '../components/WrapperBox';
+import WrapperBox from 'components/WrapperBox'
 
 interface Props {
-  children?: ReactNode;
+  children?: ReactNode
 }
 
 function EmptyLayout({ children }: Props) {
@@ -13,7 +13,7 @@ function EmptyLayout({ children }: Props) {
       {children}
       <Outlet />
     </WrapperBox>
-  );
+  )
 }
 
-export default EmptyLayout;
+export default EmptyLayout

@@ -1,8 +1,8 @@
-import { ReactNode } from "react";
-import styled from "styled-components";
+import { ReactNode } from 'react'
+import styled from 'styled-components'
 
 interface Props {
-  children?: ReactNode;
+  children?: ReactNode
 }
 const StyledWrapper = styled.div<Props>`
   max-width: 500px;
@@ -12,10 +12,10 @@ const StyledWrapper = styled.div<Props>`
   min-height: 100vh;
   position: relative;
   overflow: hidden;
-`;
+`
 
 function WrapperBox({ children, ...props }: Props) {
-  return <StyledWrapper {...props}>{children}</StyledWrapper>;
+  return <StyledWrapper {...props}>{children}</StyledWrapper>
 }
 
-export default WrapperBox;
+export default WrapperBox

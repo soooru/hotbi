@@ -139,11 +139,10 @@ table {
 
 /* custom global css */
 body {
-  background-color: #d1d1d1;
+  background-color: #f0f0f0;
 }
 button {
-  padding: 6px;
-  border-radius: 4px;
+  padding: 0px;
   border: none;
 }
 a,

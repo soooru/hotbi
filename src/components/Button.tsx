@@ -6,18 +6,24 @@ interface Props {
   mode?: string
 }
 const StyledButton = styled.button<Props>`
-  padding: 6px 12px;
-  border-radius: 8px;
-  font-size: 1rem;
-  line-height: 1.5;
+  border-radius: 10px;
+  font-size: 1.2rem;
   border: 1px solid lightgray;
 
   ${(props) =>
     props.mode === 'primary' &&
     css`
       color: white;
-      background: navy;
-      border-color: navy;
+      background: #9c27b0;
+      border-color: #9c27b0;
+      a {
+        color: white;
+        display: block;
+        padding: 10px 12px;
+      }
+      :hover {
+        background: #7b1fa2;
+      }
     `}
 `
 

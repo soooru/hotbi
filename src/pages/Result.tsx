@@ -27,7 +27,7 @@ export default function Result() {
     //결과 가져오는 함수
     const getResults = async () => {
       try {
-        let res = await axios.get('/resulttype.json')
+        let res = await axios.get('/result.json')
         let yourData = res.data[`${params.id}`]
         if (yourData) {
           setYourResult(yourData)

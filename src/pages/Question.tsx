@@ -108,7 +108,7 @@ export default function Question() {
       resultMBTI += resultStr
     })
 
-    navigate(`/result/${resultMBTI}`)
+    navigate(`/result/${resultMBTI.toLowerCase()}`)
   }
 
   return (

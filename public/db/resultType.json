@@ -1,10 +1,98 @@
 {
+  "intj": {
+    "name": "호수에 사는 파인애플 인형",
+    "summary": "인형 요약(intj)",
+    "description": "인형 설명2",
+    "with": "강아지인 척 하는 고양이. 쉿, 고양이 인형"
+  },
   "intp": {
-    "name": "intp 인형 이름",
-    "feat": "인형 특징"
+    "name": "강아지인 척 하는 고양이. 쉿, 고양이 인형",
+    "summary": "인형 요약(intp)",
+    "description": "인형 설명2",
+    "with": "쾌활한 고래 인형"
+  },
+  "entj": {
+    "name": "쾌활한 고래 인형",
+    "summary": "인형 요약(entj)",
+    "description": "인형 설명2",
+    "with": "호수에 사는 파인애플 인형"
+  },
+  "entp": {
+    "name": "친구가 많아 바쁜 눈사람 인형",
+    "summary": "인형 요약(entp)",
+    "description": "인형 설명2",
+    "with": "뽀글뽀글 털이 있는 양 인형"
+  },
+  "infj": {
+    "name": "뽀글뽀글 털이 있는 양 인형",
+    "summary": "인형 요약(infj)",
+    "description": "인형 설명2",
+    "with": "친구가 많아 바쁜 눈사람 인형"
   },
   "infp": {
-    "name": "infp 인형 이름",
-    "feat": "인형 특징"
+    "name": "눈물이 많은 오리너구리 인형",
+    "summary": "인형 요약(infp)",
+    "description": "인형 설명2",
+    "with": "눈치 빠른 똑똑한 토끼 인형"
+  },
+  "enfj": {
+    "name": "눈치 빠른 똑똑한 토끼 인형",
+    "summary": "인형 요약(enfj)",
+    "description": "인형 설명2",
+    "with": "눈물이 많은 오리너구리 인형"
+  },
+  "enfp": {
+    "name": "모두의 주목을 즐기는 호두까기 인형",
+    "summary": "인형 요약(enfp)",
+    "description": "인형 설명2",
+    "with": "모든걸 삼키는 공룡 인형"
+  },
+  "istj": {
+    "name": "모든 걸 삼키는 공룡 인형",
+    "summary": "인형 요약(istj)",
+    "description": "인형 설명2",
+    "with": "모두의 주먹을 즐기는 호두까기 인형"
+  },
+  "isfj": {
+    "name": "따뜻한 곳을 좋아하는 삼색고양이 인형",
+    "summary": "인형 요약(isfj)",
+    "description": "인형 설명2",
+    "with": "코가 빤짝거리는 대형 곰 인형"
+  },
+  "estj": {
+    "name": "코가 빤짝거리는 대형 곰 인형",
+    "summary": "인형 요약(estj)",
+    "description": "인형 설명2",
+    "with": "따뜻한 곳을 좋아하는 삼색고양이 인형"
+  },
+  "esfj": {
+    "name": "춤추는 선인장 인형",
+    "summary": "인형 요약(esfj)",
+    "description": "인형 설명2",
+    "with": "폭닥 안아버리고 싶은 코끼리 인형"
+  },
+  "istp": {
+    "name": "폭닥 안아버리고 싶은 코끼리 인형",
+    "summary": "인형 요약(istp)",
+    "description": "인형 설명2",
+    "with": "춤추는 선인장 인형"
+  },
+  "isfp": {
+    "name": "조그만 안경을 쓴 햄스터 인형",
+    "summary": "인형 요약(isfp)",
+    "description": "인형 설명2",
+    "with": "보타이를 한 개구리 인형"
+  },
+  "estp": {
+    "name": "보타이를 한 개구리 인형",
+    "summary": "인형 요약(estp)",
+    "description": "인형 설명2",
+    "with": "조그만 안경을 쓴 햄스터 인형"
+  },
+  "esfp": {
+    "name": "사랑스럽고 달톰한 단팥빵 인형",
+    "summary": "인형 요약(esfp)",
+    "description": "인형 설명2",
+    "with": "조그만 안경을 쓴 햄스터 인형"
   }
 }

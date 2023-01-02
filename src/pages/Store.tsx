@@ -6,6 +6,7 @@ export default function Store() {
       <HelmetComponents title=":모든 인형" />
       <div>
         <h2>모든 결과 모음</h2>
+        <div></div>
         <button>
           <NavLink to="/">홈 페이지로 돌아가기</NavLink>
         </button>

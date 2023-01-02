@@ -9,7 +9,7 @@ const StyledButton = styled.button<Props>`
   border-radius: 10px;
   font-size: 1.2rem;
   border: 1px solid lightgray;
-
+  padding: 0px;
   ${(props) =>
     props.mode === 'primary' &&
     css`

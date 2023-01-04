@@ -55,19 +55,10 @@ function Drawer() {
               <NavLink to="/">처음으로</NavLink>
             </StyledListItem>
             <StyledListItem>
-              <NavLink to="question">question 페이지</NavLink>
-            </StyledListItem>
-            <StyledListItem>
-              <NavLink to="result/intp">결과 페이지</NavLink>
-            </StyledListItem>
-            <StyledListItem>
-              <NavLink to="store">모든 결과 페이지</NavLink>
+              <NavLink to="store">모든 인형</NavLink>
             </StyledListItem>
             <StyledListItem>
               <NavLink to="developer">만든사람</NavLink>
-            </StyledListItem>
-            <StyledListItem>
-              <NavLink to="notfound">notFound 페이지</NavLink>
             </StyledListItem>
           </ul>
         </div>

@@ -15,7 +15,9 @@ function Header() {
   return (
     <>
       <StyledHeader>
-        <button onClick={onToggle}>menu</button>
+        <button id="menu" onClick={onToggle}>
+          menu
+        </button>
         <div>logo</div>
       </StyledHeader>
     </>

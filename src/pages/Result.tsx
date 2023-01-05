@@ -1,6 +1,6 @@
 import HelmetComponents from 'components/HelmetComponents'
 import { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams, NavLink } from 'react-router-dom'
 import axios from 'api'
 import styled from 'styled-components'
 
@@ -17,6 +17,23 @@ const TitleBox = styled.div`
 `
 const WrapBox = styled.div`
   padding: 10px;
+  .more-action {
+    margin-top: 30px;
+    button {
+      display: block;
+      width: 80%;
+      margin: 0 auto;
+      padding: 0px;
+      margin-bottom: 20px;
+      border-radius: 16px;
+      a {
+        width: 100%;
+        height: 100%;
+        display: block;
+        padding: 16px 0px;
+      }
+    }
+  }
 `
 export default function Result() {
   const [yourResult, setYourResult] = useState<result>({})
@@ -52,6 +69,12 @@ export default function Result() {
         <div>{yourResult?.description}</div>
         <TitleBox>네 인형과 어울리는 다른 인형은?</TitleBox>
         <div>{yourResult?.with}</div>
+        <div className="more-action">
+          <button>
+            <NavLink to="/question">다시 하기</NavLink>
+          </button>
+          <button>공유 하기</button>
+        </div>
       </WrapBox>
     </>
   )

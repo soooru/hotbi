@@ -2,6 +2,7 @@ import HelmetComponents from 'components/HelmetComponents'
 import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import styled from 'styled-components'
+import ProcessBar from 'components/ProcessBar'
 
 import axios from 'api'
 
@@ -115,7 +116,7 @@ export default function Question() {
     <>
       <HelmetComponents title=":질문" />
       <div>
-        <div>{questionOrder}</div>
+        <ProcessBar total={questionList.length} now={questionOrder} />
         <QuestionBox>Q. {questionList[questionOrder]?.question} </QuestionBox>
         <AnswerBox>
           {questionList[questionOrder]?.answer?.map((v, index) => (

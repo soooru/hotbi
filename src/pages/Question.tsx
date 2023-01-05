@@ -37,6 +37,7 @@ export default function Question() {
   const [questionOrder, setOrderNum] = useState<number>(0)
   const [questionList, setQuestionList] = useState<questionType[]>([])
   const [result, setResult] = useState<any>({})
+  const [isLoading, setLoading] = useState<boolean>(false)
 
   useEffect(() => {
     //문제를 가져오는 함수
@@ -60,7 +61,11 @@ export default function Question() {
       if (questionOrder < 7) {
         calculateQuestion(score)
       } else {
-        caculateResult()
+        setLoading(true)
+        setTimeout(() => {
+          setLoading(false)
+          caculateResult()
+        }, 2000)
       }
     } catch (error) {
       navigate('/notfound')
@@ -115,22 +120,26 @@ export default function Question() {
   return (
     <>
       <HelmetComponents title=":질문" />
-      <div>
-        <ProcessBar total={questionList.length} now={questionOrder} />
-        <QuestionBox>Q. {questionList[questionOrder]?.question} </QuestionBox>
-        <AnswerBox>
-          {questionList[questionOrder]?.answer?.map((v, index) => (
-            <button
-              onClick={() => {
-                nextStep(v.score)
-              }}
-              key={`question${questionOrder}-${index}`}
-            >
-              {v.title}
-            </button>
-          ))}
-        </AnswerBox>
-      </div>
+      {isLoading ? (
+        <div>손님에게 맞는 인형을 골라 숨을 불어넣을게요.</div>
+      ) : (
+        <div>
+          <ProcessBar total={questionList.length} now={questionOrder} />
+          <QuestionBox>Q. {questionList[questionOrder]?.question} </QuestionBox>
+          <AnswerBox>
+            {questionList[questionOrder]?.answer?.map((v, index) => (
+              <button
+                onClick={() => {
+                  nextStep(v.score)
+                }}
+                key={`question${questionOrder}-${index}`}
+              >
+                {v.title}
+              </button>
+            ))}
+          </AnswerBox>
+        </div>
+      )}
     </>
   )
 }

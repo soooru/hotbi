@@ -10,7 +10,7 @@ const NickName = styled.strong`
 export default function Developer() {
   return (
     <>
-      <HelmetComponents title=":만든 사람" />
+      <HelmetComponents title=":가게 정보" />
       <StyledWrapper>
         <div>
           <NickName>배구리</NickName> <br />

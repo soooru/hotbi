@@ -8,12 +8,17 @@ import axios from 'api'
 
 interface questionType {
   id?: number
+  type: string
   question?: string
   answer?: answerType[]
 }
 interface answerType {
   title: string
   score: string
+}
+interface tempResultType {
+  type: string
+  result: string[]
 }
 
 const QuestionBox = styled.div`
@@ -37,6 +42,13 @@ export default function Question() {
   const [questionOrder, setOrderNum] = useState<number>(0)
   const [questionList, setQuestionList] = useState<questionType[]>([])
   const [result, setResult] = useState<any>({})
+  const [tempResult, setTempResult] = useState<tempResultType[]>([
+    { type: 'default', result: [] },
+    { type: 'group1', result: [] },
+    { type: 'group2', result: [] },
+    { type: 'group3', result: [] },
+    { type: 'group4', result: [] },
+  ])
   const [isLoading, setLoading] = useState<boolean>(false)
 
   useEffect(() => {
@@ -56,15 +68,16 @@ export default function Question() {
 
   //다음 문제로 이동하는 함수
   const navigate = useNavigate()
-  const nextStep = (score: string) => {
+  const nextStep = (score: string, order: number) => {
     try {
-      if (questionOrder < 7) {
-        calculateQuestion(score)
+      if (order < 11) {
+        calculateQuestion(score, order)
       } else {
         setLoading(true)
+        const resultMBTI = caculateResult()
         setTimeout(() => {
           setLoading(false)
-          caculateResult()
+          navigate(`/result/${resultMBTI.toLowerCase()}`)
         }, 2000)
       }
     } catch (error) {
@@ -73,20 +86,52 @@ export default function Question() {
   }
 
   //결과를 계산하는 함수
-  const calculateQuestion = (score: string) => {
+  const calculateQuestion = (score: string, order: number) => {
     const newElement: string[] = score.split(',').map((v: string) => v.trim())
-    newElement.forEach((item: string) => {
-      setResult((current: any) => {
-        current[item] = (current[item] || 0) + 1
-        return { ...current }
-      })
-    })
+    const currentType = questionList[order].type
+
+    const findIndex = tempResult.findIndex(
+      (element) => element.type === currentType
+    )
+
+    let copyTempArray = [...tempResult]
+    if (findIndex !== -1) {
+      copyTempArray[findIndex] = {
+        type: copyTempArray[findIndex].type,
+        result: copyTempArray[findIndex].result.concat(newElement),
+      }
+    }
+
+    setTempResult(copyTempArray)
 
     setOrderNum(questionOrder + 1)
   }
 
   //결과를 도출해내는 함수
   const caculateResult = () => {
+    //가산점 추가
+    let allResults: any = []
+    tempResult.forEach((item) => {
+      if (item.type === 'default') {
+        allResults = [...allResults, ...item.result]
+      } else {
+        const arr = [...item.result]
+        const findDuplicates = (arr: any) =>
+          arr.filter((item: any, index: any) => arr.indexOf(item) !== index)
+        const duplicates = findDuplicates(arr)
+
+        allResults = [...allResults, ...item.result, ...duplicates]
+      }
+    })
+
+    //가산점에 따른 결과값 정리
+    allResults.forEach((item: string) => {
+      setResult((current: any) => {
+        current[item] = (current[item] || 0) + 1
+        return { ...current }
+      })
+    })
+
     //최종 결과값 구하기
     const requestCharactor = [
       ['I', 'E'],
@@ -114,7 +159,7 @@ export default function Question() {
       resultMBTI += resultStr
     })
 
-    navigate(`/result/${resultMBTI.toLowerCase()}`)
+    return resultMBTI
   }
 
   return (
@@ -130,7 +175,7 @@ export default function Question() {
             {questionList[questionOrder]?.answer?.map((v, index) => (
               <button
                 onClick={() => {
-                  nextStep(v.score)
+                  nextStep(v.score, questionOrder)
                 }}
                 key={`question${questionOrder}-${index}`}
               >

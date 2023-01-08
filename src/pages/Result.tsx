@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react'
 import { useParams, NavLink } from 'react-router-dom'
 import axios from 'api'
 import styled from 'styled-components'
+import Toast from 'components/Toast'
 
 interface result {
   name?: string
@@ -26,7 +27,8 @@ const WrapBox = styled.div`
       padding: 0px;
       margin-bottom: 20px;
       border-radius: 16px;
-      a {
+      a,
+      span {
         width: 100%;
         height: 100%;
         display: block;
@@ -37,8 +39,25 @@ const WrapBox = styled.div`
 `
 export default function Result() {
   const [yourResult, setYourResult] = useState<result>({})
+  const [toastState, setToastState] = useState<boolean>(false)
+  const [toastText, setToastText] = useState<string>('')
 
   const params = useParams()
+  const handleCopyClipBoard = async (text: string) => {
+    if (toastState) return
+    try {
+      await navigator.clipboard.writeText(text)
+
+      setToastText('복사 완료, 인형 가게를 공유해 주세요.')
+    } catch (error) {
+      setToastText('복사에 실패하였습니다.')
+    } finally {
+      setToastState(true)
+      setTimeout(() => {
+        setToastState(false)
+      }, 2000)
+    }
+  }
 
   useEffect(() => {
     //결과 가져오는 함수
@@ -73,9 +92,16 @@ export default function Result() {
           <button>
             <NavLink to="/question">다시 하기</NavLink>
           </button>
-          <button>공유 하기</button>
+          <button
+            onClick={(e: any) => {
+              handleCopyClipBoard(window.location.href)
+            }}
+          >
+            <span>공유 하기</span>
+          </button>
         </div>
       </WrapBox>
+      <Toast text={toastText} active={toastState} />
     </>
   )
 }

@@ -19,7 +19,7 @@ const StyledNav = styled.nav<Props>`
   height: 100vh;
   transition: all 0.3s ease-in-out;
   transform: translate(-300px);
-  z-index: 1;
+  z-index: 2;
   ${(props) =>
     props.open === 'open' &&
     css`
@@ -27,8 +27,11 @@ const StyledNav = styled.nav<Props>`
     `}
 `
 const StyledListItem = styled.li`
-  padding: 16px;
-  font-size: 1.2rem;
+  a {
+    font-size: 1.2rem;
+    padding: 16px;
+    display: block;
+  }
 `
 const StyleDim = styled.div`
   background: #000;
@@ -38,6 +41,7 @@ const StyleDim = styled.div`
   position: absolute;
   top: 0;
   left: 0;
+  z-index: 1;
 `
 function Drawer() {
   const { onToggle, isActive } = useDrawerState()
@@ -58,7 +62,7 @@ function Drawer() {
               <NavLink to="store">모든 인형</NavLink>
             </StyledListItem>
             <StyledListItem>
-              <NavLink to="developer">만든사람</NavLink>
+              <NavLink to="developer">가게 정보</NavLink>
             </StyledListItem>
           </ul>
         </div>

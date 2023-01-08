@@ -152,3 +152,19 @@ a:active {
   outline: none;
   color: #000;
 }
+/* animation  */
+.animation-topdown {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 20px;
+  animation: topdown 0.3s linear 0s infinite alternate;
+}
+@keyframes topdown {
+  0% {
+    bottom: 15px;
+  } /* 처음 위치 */
+  100% {
+    bottom: 20px;
+  } /* 마지막 위치 */
+}

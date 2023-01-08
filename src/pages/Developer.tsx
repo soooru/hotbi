@@ -14,7 +14,7 @@ export default function Developer() {
       <StyledWrapper>
         <div>
           <NickName>솔구리</NickName> <br />
-          가게의 제봉사 <br />
+          가게의 재단사 <br />
           바위에 사는 개구리. 도넛을 좋아한다. <br />
           코딩을 한다.
         </div>

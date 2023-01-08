@@ -1,5 +1,5 @@
 import HelmetComponents from 'components/HelmetComponents'
-import { useEffect, useState, useRef } from 'react'
+import { useEffect, useState } from 'react'
 import { useParams, NavLink } from 'react-router-dom'
 import axios from 'api'
 import styled from 'styled-components'

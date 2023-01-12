@@ -37,11 +37,15 @@ const AnswerBox = styled.div`
     padding: 6px;
   }
 `
+const LoadingWrap = styled.div`
+  margin-top: 80px;
+  text-algin: center;
+  font-size: 1.2rem;
+`
 
 export default function Question() {
   const [questionOrder, setOrderNum] = useState<number>(0)
   const [questionList, setQuestionList] = useState<questionType[]>([])
-  const [result, setResult] = useState<any>({})
   const [tempResult, setTempResult] = useState<tempResultType[]>([
     { type: 'default', result: [] },
     { type: 'group1', result: [] },
@@ -124,15 +128,15 @@ export default function Question() {
       }
     })
 
+    console.log('tempResult', tempResult)
     //가산점에 따른 결과값 정리
-    allResults.forEach((item: string) => {
-      setResult((current: any) => {
-        current[item] = (current[item] || 0) + 1
-        return { ...current }
-      })
-    })
+    const result = allResults.reduce((accu: any, curr: any) => {
+      accu[curr] = (accu[curr] || 0) + 1
+      return accu
+    }, {})
 
-    //최종 결과값 구하기
+    console.log('result', result)
+
     const requestCharactor = [
       ['I', 'E'],
       ['S', 'N'],
@@ -166,7 +170,7 @@ export default function Question() {
     <>
       <HelmetComponents title=":질문" />
       {isLoading ? (
-        <div>손님에게 맞는 인형을 골라 숨을 불어넣을게요.</div>
+        <LoadingWrap>손님에게 맞는 인형을 골라 숨을 불어넣을게요.</LoadingWrap>
       ) : (
         <div>
           <ProcessBar total={questionList.length} now={questionOrder} />

@@ -4,6 +4,7 @@ import { useParams, NavLink } from 'react-router-dom'
 import axios from 'api'
 import styled from 'styled-components'
 import Toast from 'components/Toast'
+import ShareButton from 'components/ShareButton'
 
 interface result {
   name?: string
@@ -97,8 +98,9 @@ export default function Result() {
               handleCopyClipBoard(window.location.href)
             }}
           >
-            <span>공유 하기</span>
+            <span>페이지 주소 복사하기</span>
           </button>
+          <ShareButton result={yourResult?.name} />
         </div>
       </WrapBox>
       <Toast text={toastText} active={toastState} />

@@ -1,98 +1,114 @@
 {
-  "intj": {
-    "name": "호수에 사는 파인애플 인형",
-    "summary": "인형 요약(intj)",
-    "description": "인형 설명2",
-    "with": "강아지인 척 하는 고양이. 쉿, 고양이 인형"
+  "enfp": {
+    "name": "에너제틱 리트리버 인형",
+    "summary": "활발한 인사이더",
+    "description": "늘 열정적인 손님에게는 <에너제틱 리트리버 인형>을 추천할게요. <br/> 이 인형은 엄청난 친화력을 가지고 있어서 보자마자 베프가 될 수 있을 거예요.<br/> 언제나 유쾌한 이 친구를 보다보면 절로 기분이 좋아질 겁니다. 이 가게에서 유명한 분위기메이커거든요. <br/>추진력도 굉장한 인형이라 이런 저런 재미있는 일을 만들어낼 수도 있어요. 지루할 틈이 없겠죠? <br/>주의하실 점을 알려드리자면, 이 친구는 한마디로 ‘관심종자’에요! 다른 사람의 관심이나 인정을 원하는 아이라 이런 것들이 부족하다 싶으면 시무룩해질수도 있어요. 물론 워낙 긍정적인 친구라 그 시무룩한 상태가 오래가진 않는답니다. 자기 기분대로 움직이는 것 같아도 사실은 주변을 계속 살피고 있는 아이에요. 언제나 사랑과 관심으로 대해주신다면 행복해 할 거예요!",
+    "description2": "인형에 관한 설명을 듣다보니 뭔가 손님에 대한 이야기를 하는 것 같았나요?<br/>맞아요, 저희는 손님과 가장 닮은 인형을 추천드린답니다. <br/>늘 밝아보이지만 사실 상처도 잘 받는 손님에게 이 인형이 큰 위로와 활력이 되기를 바랄게요!",
+    "with": "평화주의 개구리 인형"
   },
   "intp": {
     "name": "강아지인 척 하는 고양이. 쉿, 고양이 인형",
     "summary": "인형 요약(intp)",
     "description": "인형 설명2",
+    "description2": "",
     "with": "쾌활한 고래 인형"
   },
   "entj": {
     "name": "쾌활한 고래 인형",
     "summary": "인형 요약(entj)",
     "description": "인형 설명2",
+    "description2": "",
     "with": "호수에 사는 파인애플 인형"
   },
   "entp": {
     "name": "친구가 많아 바쁜 눈사람 인형",
     "summary": "인형 요약(entp)",
     "description": "인형 설명2",
+    "description2": "",
     "with": "뽀글뽀글 털이 있는 양 인형"
   },
   "infj": {
     "name": "뽀글뽀글 털이 있는 양 인형",
     "summary": "인형 요약(infj)",
     "description": "인형 설명2",
+    "description2": "",
     "with": "친구가 많아 바쁜 눈사람 인형"
   },
   "infp": {
     "name": "눈물이 많은 오리너구리 인형",
     "summary": "인형 요약(infp)",
     "description": "인형 설명2",
+    "description2": "",
     "with": "눈치 빠른 똑똑한 토끼 인형"
   },
   "enfj": {
     "name": "눈치 빠른 똑똑한 토끼 인형",
     "summary": "인형 요약(enfj)",
     "description": "인형 설명2",
+    "description2": "",
     "with": "눈물이 많은 오리너구리 인형"
   },
-  "enfp": {
+  "intj": {
     "name": "모두의 주목을 즐기는 호두까기 인형",
     "summary": "인형 요약(enfp)",
     "description": "인형 설명2",
+    "description2": "",
     "with": "모든걸 삼키는 공룡 인형"
   },
   "istj": {
     "name": "모든 걸 삼키는 공룡 인형",
     "summary": "인형 요약(istj)",
     "description": "인형 설명2",
+    "description2": "",
     "with": "모두의 주먹을 즐기는 호두까기 인형"
   },
   "isfj": {
     "name": "따뜻한 곳을 좋아하는 삼색고양이 인형",
     "summary": "인형 요약(isfj)",
     "description": "인형 설명2",
+    "description2": "",
     "with": "코가 빤짝거리는 대형 곰 인형"
   },
   "estj": {
     "name": "코가 빤짝거리는 대형 곰 인형",
     "summary": "인형 요약(estj)",
     "description": "인형 설명2",
+    "description2": "",
     "with": "따뜻한 곳을 좋아하는 삼색고양이 인형"
   },
   "esfj": {
     "name": "춤추는 선인장 인형",
     "summary": "인형 요약(esfj)",
     "description": "인형 설명2",
+    "description2": "",
     "with": "폭닥 안아버리고 싶은 코끼리 인형"
   },
   "istp": {
     "name": "폭닥 안아버리고 싶은 코끼리 인형",
     "summary": "인형 요약(istp)",
     "description": "인형 설명2",
+    "description2": "",
     "with": "춤추는 선인장 인형"
   },
   "isfp": {
     "name": "조그만 안경을 쓴 햄스터 인형",
     "summary": "인형 요약(isfp)",
     "description": "인형 설명2",
+    "description2": "",
     "with": "보타이를 한 개구리 인형"
   },
   "estp": {
     "name": "보타이를 한 개구리 인형",
     "summary": "인형 요약(estp)",
     "description": "인형 설명2",
+    "description2": "",
     "with": "조그만 안경을 쓴 햄스터 인형"
   },
   "esfp": {
     "name": "사랑스럽고 달톰한 단팥빵 인형",
     "summary": "인형 요약(esfp)",
     "description": "인형 설명2",
+    "description2": "",
     "with": "조그만 안경을 쓴 햄스터 인형"
   }
 }

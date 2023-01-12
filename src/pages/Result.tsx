@@ -9,7 +9,8 @@ import ShareButton from 'components/ShareButton'
 interface result {
   name?: string
   summary?: string
-  description?: string
+  description: string
+  description2: string
   with?: string
 }
 
@@ -20,7 +21,7 @@ const TitleBox = styled.div`
 const WrapBox = styled.div`
   padding: 10px;
   .more-action {
-    margin-top: 30px;
+    margin-top: 60px;
     button {
       display: block;
       width: 80%;
@@ -39,7 +40,10 @@ const WrapBox = styled.div`
   }
 `
 export default function Result() {
-  const [yourResult, setYourResult] = useState<result>({})
+  const [yourResult, setYourResult] = useState<result>({
+    description: '',
+    description2: '',
+  })
   const [toastState, setToastState] = useState<boolean>(false)
   const [toastText, setToastText] = useState<string>('')
 
@@ -81,13 +85,19 @@ export default function Result() {
       <HelmetComponents title=":결과" />
       <WrapBox>
         <div>이미지</div>
-        <TitleBox>너의 인형은?</TitleBox>
-        <div>{yourResult?.name}</div>
-        <TitleBox>이 인형의 특징은?</TitleBox>
-        <div>{yourResult?.summary}</div>
-        <TitleBox>이 인형과 어울리는 너는?</TitleBox>
-        <div>{yourResult?.description}</div>
-        <TitleBox>네 인형과 어울리는 다른 인형은?</TitleBox>
+        <TitleBox>{yourResult?.name}</TitleBox>
+        <TitleBox>{yourResult?.summary}</TitleBox>
+        <div dangerouslySetInnerHTML={{ __html: yourResult.description }}></div>
+        <br />
+        <br />
+        <div
+          dangerouslySetInnerHTML={{ __html: yourResult.description2 }}
+        ></div>
+        <TitleBox>
+          손님의 인형과 어울릴 만한 다른 인형이에요. <br />
+          손님이 언젠가 이 인형과도 마주쳤으면 좋겠군요!
+        </TitleBox>
+        <br />
         <div>{yourResult?.with}</div>
         <div className="more-action">
           <button>

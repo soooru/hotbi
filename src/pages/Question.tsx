@@ -39,7 +39,7 @@ const AnswerBox = styled.div`
 `
 const LoadingWrap = styled.div`
   margin-top: 80px;
-  text-algin: center;
+  text-align: center;
   font-size: 1.2rem;
 `
 
@@ -63,7 +63,6 @@ export default function Question() {
         let { data } = res.data
         setQuestionList(data)
       } catch (error) {
-        console.log(error)
         setQuestionList([])
       }
     }
@@ -113,7 +112,7 @@ export default function Question() {
 
   //결과를 도출해내는 함수
   const caculateResult = () => {
-    //가산점 추가
+    //1.가산점 추가
     let allResults: any = []
     tempResult.forEach((item) => {
       if (item.type === 'default') {
@@ -128,14 +127,11 @@ export default function Question() {
       }
     })
 
-    console.log('tempResult', tempResult)
-    //가산점에 따른 결과값 정리
+    //2.가산점에 따른 결과값 정리
     const result = allResults.reduce((accu: any, curr: any) => {
       accu[curr] = (accu[curr] || 0) + 1
       return accu
     }, {})
-
-    console.log('result', result)
 
     const requestCharactor = [
       ['I', 'E'],
@@ -143,8 +139,9 @@ export default function Question() {
       ['T', 'F'],
       ['P', 'J'],
     ]
-    let resultMBTI = ''
 
+    //3.실제 결과 도출하기
+    let resultMBTI = ''
     requestCharactor.forEach((compareItem) => {
       const firstStr = compareItem[0]
       const secondStr = compareItem[1]
@@ -159,7 +156,6 @@ export default function Question() {
       ) {
         resultStr = secondStr
       }
-
       resultMBTI += resultStr
     })
 

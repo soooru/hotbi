@@ -1,69 +1,84 @@
 {
   "data": [
     {
-      "name": "호수에 사는 파인애플 인형",
-      "url": "/result/intj"
+      "name": "에너제틱 리트리버 인형",
+      "url": "/result/enfp",
+      "img": ""
     },
     {
-      "name": "강아지인 척 하는 고양이. 쉿, 고양이 인형",
-      "url": "/result/intp"
+      "name": "다정다감 청설모 인형",
+      "url": "/result/enfj",
+      "img": ""
+    },
+    {
+      "name": "유능 인재 부엉이 인형",
+      "url": "/result/entj",
+      "img": ""
+    },
+    {
+      "name": "마이웨이 선인장 인형",
+      "url": "/result/entp",
+      "img": ""
+    },
+    {
+      "name": "엄격근엄진지 라쿤 인형",
+      "url": "/result/estj",
+      "img": ""
+    },
+    {
+      "name": "평화주의 개구리 인형",
+      "url": "/result/infj",
+      "img": ""
+    },
+    {
+      "name": "다정한 울보 오리 인형",
+      "url": "/result/infp",
+      "img": ""
+    },
+    {
+      "name": "탐구왕 안경 고양이 인형",
+      "url": "/result/intp",
+      "img": ""
     },
     {
       "name": "쾌활한 고래 인형",
-      "url": "/result/entj"
+      "url": "/result/esfp",
+      "img": ""
     },
     {
-      "name": "친구가 많아 바쁜 눈사람 인형",
-      "url": "/result/entp"
+      "name": "단체생활러 토끼 인형",
+      "url": "/result/esfj",
+      "img": ""
     },
     {
-      "name": "뽀글뽀글 털이 있는 양 인형",
-      "url": "/result/infj"
+      "name": "장난꾸러기 사자 인형",
+      "url": "/result/estp",
+      "img": ""
     },
     {
-      "name": "눈물이 많은 오리너구리 인형",
-      "url": "/result/infp"
+      "name": "조용한 완벽주의자 코끼리 인형",
+      "url": "/result/isfj",
+      "img": ""
     },
     {
-      "name": "눈치 빠른 똑똑한 토끼 인형",
-      "url": "/result/enfj"
+      "name": "거짓말을 못하는 호두까기 인형",
+      "url": "/result/intj",
+      "img": ""
     },
     {
-      "name": "모두의 주목을 즐기는 호두까기 인형",
-      "url": "/result/enfp"
+      "name": "포근포근 따뜻한 곰 인형",
+      "url": "/result/isfp",
+      "img": ""
     },
     {
-      "name": "모든 걸 삼키는 공룡 인형",
-      "url": "/result/istj"
+      "name": "심드렁한 눈사람 인형",
+      "url": "/result/istp",
+      "img": ""
     },
     {
-      "name": "따뜻한 곳을 좋아하는 삼색고양이 인형",
-      "url": "/result/isfj"
-    },
-    {
-      "name": "코가 빤짝거리는 대형 곰 인형",
-      "url": "/result/estj"
-    },
-    {
-      "name": "춤추는 선인장 인형",
-      "url": "/result/esfj"
-    },
-    {
-      "name": "폭닥 안아버리고 싶은 코끼리 인형",
-      "url": "/result/istp"
-    },
-    {
-      "name": "조그만 안경을 쓴 햄스터 인형",
-      "url": "/result/isfp"
-    },
-    {
-      "name": "보타이를 한 개구리 인형",
-      "url": "/result/estp"
-    },
-
-    {
-      "name": "사랑스럽고 달톰한 단팥빵 인형",
-      "url": "/result/esfp"
+      "name": "튀고 싶지 않은 파인애플 인형",
+      "url": "/result/istj",
+      "img": ""
     }
   ]
 }

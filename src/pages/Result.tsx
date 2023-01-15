@@ -15,11 +15,22 @@ interface result {
 }
 
 const TitleBox = styled.div`
+  font-size: 1.4rem;
+  margin-top: 20px;
+  line-height: 1.5rem;
+  font-weight: 500;
+`
+const SubTitleBox = styled.div`
   font-size: 1.2rem;
   margin-top: 20px;
+  line-height: 1.4rem;
 `
 const WrapBox = styled.div`
   padding: 10px;
+  .desc {
+    margin-top: 20px;
+    line-height: 1.2rem;
+  }
   .more-action {
     margin-top: 60px;
     button {
@@ -86,17 +97,19 @@ export default function Result() {
       <WrapBox>
         <div>이미지</div>
         <TitleBox>{yourResult?.name}</TitleBox>
-        <TitleBox>{yourResult?.summary}</TitleBox>
-        <div dangerouslySetInnerHTML={{ __html: yourResult.description }}></div>
-        <br />
-        <br />
+        <SubTitleBox>{yourResult?.summary}</SubTitleBox>
         <div
+          className="desc"
+          dangerouslySetInnerHTML={{ __html: yourResult.description }}
+        ></div>
+        <div
+          className="desc"
           dangerouslySetInnerHTML={{ __html: yourResult.description2 }}
         ></div>
-        <TitleBox>
+        <SubTitleBox>
           손님의 인형과 어울릴 만한 다른 인형이에요. <br />
           손님이 언젠가 이 인형과도 마주쳤으면 좋겠군요!
-        </TitleBox>
+        </SubTitleBox>
         <br />
         <div>{yourResult?.with}</div>
         <div className="more-action">

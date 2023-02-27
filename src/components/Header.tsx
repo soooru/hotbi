@@ -2,7 +2,6 @@ import styled from 'styled-components'
 import useDrawerState from 'hooks/useDrawerState'
 
 const StyledHeader = styled.header`
-  background: skyblue;
   display: flex;
   padding: 0 10px;
   height: 50px;

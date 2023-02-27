@@ -5,6 +5,7 @@ import axios from 'api'
 import styled from 'styled-components'
 import Toast from 'components/Toast'
 import ShareButton from 'components/ShareButton'
+import ProfileImage from 'components/ProfileImage'
 
 interface result {
   name?: string
@@ -27,6 +28,9 @@ const SubTitleBox = styled.div`
 `
 const WrapBox = styled.div`
   padding: 10px;
+  .profile {
+    text-align: center;
+  }
   .desc {
     margin-top: 20px;
     line-height: 1.2rem;
@@ -94,8 +98,10 @@ export default function Result() {
   return (
     <>
       <HelmetComponents title=":결과" />
-      <WrapBox>
-        <div>이미지</div>
+      <WrapBox className="usefont">
+        <div className="profile">
+          <ProfileImage mbti={params.id} />
+        </div>
         <TitleBox>{yourResult?.name}</TitleBox>
         <SubTitleBox>{yourResult?.summary}</SubTitleBox>
         <div

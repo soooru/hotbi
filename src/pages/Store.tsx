@@ -4,10 +4,12 @@ import { NavLink } from 'react-router-dom'
 import styled from 'styled-components'
 
 import axios from 'api'
+import ProfileImage from 'components/ProfileImage'
 
 interface resultProps {
   name: string
   url: string
+  img: string
 }
 
 const StyledWrapper = styled.div`
@@ -16,6 +18,10 @@ const StyledWrapper = styled.div`
   display: grid;
   row-gap: 20px;
   column-gap: 20px;
+  text-align: center;
+  img {
+    max-width: 100%;
+  }
 `
 const StyledTitle = styled.div`
   font-size: 1.2rem;
@@ -47,13 +53,15 @@ export default function Store() {
   return (
     <>
       <HelmetComponents title=":모든 인형" />
-      <div>
+      <div className="usefont">
         <StyledTitle>가게의 모든 인형</StyledTitle>
         <StyledWrapper>
           {allResults &&
             allResults.map((v) => (
               <NavLink to={v.url} key={v.name}>
-                <div>이미지</div>
+                <div>
+                  <ProfileImage mbti={v.img} />
+                </div>
                 <div>{v.name}</div>
               </NavLink>
             ))}

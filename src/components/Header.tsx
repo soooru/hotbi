@@ -17,7 +17,6 @@ function Header() {
         <button id="menu" onClick={onToggle}>
           menu
         </button>
-        <div>logo</div>
       </StyledHeader>
     </>
   )

@@ -16,7 +16,7 @@ const StyledNav = styled.nav<Props>`
   left: 0;
   top: 0;
   width: 300px;
-  height: 100vh;
+  height: 100%;
   transition: all 0.3s ease-in-out;
   transform: translate(-300px);
   z-index: 2;
@@ -37,7 +37,7 @@ const StyleDim = styled.div`
   background: #000;
   opacity: 0.6;
   width: 100%;
-  height: 100vh;
+  height: 100%;
   position: absolute;
   top: 0;
   left: 0;

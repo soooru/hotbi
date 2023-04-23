@@ -17,17 +17,18 @@ interface result {
 
 const TitleBox = styled.div`
   font-size: 1.4rem;
-  margin-top: 20px;
+  margin: 20px 0px;
   line-height: 1.5rem;
   font-weight: 500;
+  text-align: center;
 `
 const SubTitleBox = styled.div`
   font-size: 1.2rem;
-  margin-top: 20px;
+  margin-top: 50px;
   line-height: 1.4rem;
 `
 const WrapBox = styled.div`
-  padding: 10px;
+  padding: 10px 30px;
   .profile {
     text-align: center;
   }
@@ -99,10 +100,10 @@ export default function Result() {
     <>
       <HelmetComponents title=":결과" />
       <WrapBox className="usefont">
+        <TitleBox>{yourResult?.name}</TitleBox>
         <div className="profile">
           <ProfileImage mbti={params.id} />
         </div>
-        <TitleBox>{yourResult?.name}</TitleBox>
         <SubTitleBox>{yourResult?.summary}</SubTitleBox>
         <div
           className="desc"
@@ -112,10 +113,7 @@ export default function Result() {
           className="desc"
           dangerouslySetInnerHTML={{ __html: yourResult.description2 }}
         ></div>
-        <SubTitleBox>
-          손님의 인형과 어울릴 만한 다른 인형이에요. <br />
-          손님이 언젠가 이 인형과도 마주쳤으면 좋겠군요!
-        </SubTitleBox>
+        <SubTitleBox>손님과 친할 것 같은 인형은...</SubTitleBox>
         <br />
         <div>{yourResult?.with}</div>
         <div className="more-action">

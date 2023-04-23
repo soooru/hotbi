@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import useDrawerState from 'hooks/useDrawerState'
+import MenuBtn from 'components/MenuBtn'
 
 const StyledHeader = styled.header`
   display: flex;
@@ -14,9 +15,7 @@ function Header() {
   return (
     <>
       <StyledHeader>
-        <button id="menu" onClick={onToggle}>
-          menu
-        </button>
+        <MenuBtn clickEvent={onToggle} text="메뉴" />
       </StyledHeader>
     </>
   )

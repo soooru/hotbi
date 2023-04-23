@@ -1,6 +1,7 @@
 import styled, { css } from 'styled-components'
 import useDrawerState from 'hooks/useDrawerState'
 import { NavLink } from 'react-router-dom'
+import MenuBtn from 'components/MenuBtn'
 
 interface Props {
   open: string
@@ -15,10 +16,10 @@ const StyledNav = styled.nav<Props>`
   position: absolute;
   left: 0;
   top: 0;
-  width: 300px;
+  width: 100%;
   height: 100%;
   transition: all 0.3s ease-in-out;
-  transform: translate(-300px);
+  transform: translate(-100%);
   z-index: 2;
   ${(props) =>
     props.open === 'open' &&
@@ -29,7 +30,7 @@ const StyledNav = styled.nav<Props>`
 const StyledListItem = styled.li`
   a {
     font-size: 1.2rem;
-    padding: 16px;
+    padding: 20px;
     display: block;
   }
 `
@@ -43,6 +44,7 @@ const StyleDim = styled.div`
   left: 0;
   z-index: 1;
 `
+
 function Drawer() {
   const { onToggle, isActive } = useDrawerState()
 
@@ -51,9 +53,9 @@ function Drawer() {
       {isActive ? <StyleDim onClick={onToggle} /> : null}
       <StyledNav open={isActive ? 'open' : 'close'}>
         <StyledNavHead>
-          <button onClick={onToggle}>닫기</button>
+          <MenuBtn clickEvent={onToggle} text="닫기" />
         </StyledNavHead>
-        <div>
+        <div className="menu-list ">
           <ul onClick={onToggle}>
             <StyledListItem>
               <NavLink to="/">처음으로</NavLink>

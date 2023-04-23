@@ -10,14 +10,16 @@ interface Props {
 }
 const DetaultLayout = ({ children }: Props) => {
   return (
-    <WrapperBox>
+    <>
       <DrawerContext>
-        <Header />
-        <Drawer />
-        {children}
-        <Outlet />
+        <WrapperBox>
+          <Header />
+          <Drawer />
+          {children}
+          <Outlet />
+        </WrapperBox>
       </DrawerContext>
-    </WrapperBox>
+    </>
   )
 }
 

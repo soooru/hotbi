@@ -9,7 +9,7 @@ import { NavLink } from 'react-router-dom'
 
 const StyledBox = styled.div`
   text-align: center;
-  padding: 20px 40px;
+  padding: 20px;
   img {
     max-width: 100%;
     width: 100px;

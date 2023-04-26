@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import styled from 'styled-components'
 import ProcessBar from 'components/ProcessBar'
+import ic_portion from 'assets/images/ic_portion.png'
 
 import axios from 'api'
 
@@ -22,25 +23,43 @@ interface tempResultType {
 }
 
 const QuestionBox = styled.div`
-  font-size: 1.2rem;
-  padding: 10px;
+  font-size: 1.1rem;
+  line-height: 1.4rem;
+  padding: 20px 30px;
 `
 const AnswerBox = styled.div`
-  text-align: center;
-  padding: 10px;
+  padding: 20px 30px;
+  font-size: 1.1rem;
+  line-height: 1.4rem;
   button {
-    margin-top: 10px;
-    display: block;
+    font-size: 1.1rem;
+    line-height: 1.4rem;
+    margin-bottom: 20px;
+    background: #77a2af;
     width: 100%;
-    font-size: 1.2rem;
-    border: 1px solid lightgray;
-    padding: 6px;
+    text-decoration: none;
+    color: white;
+    padding: 12px 20px;
+    display: inline-block;
+    position: relative;
+    border: 1px solid rgba(0, 0, 0, 0.21);
+    border-bottom: 4px solid rgba(0, 0, 0, 0.21);
+    border-radius: 4px;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.15);
   }
 `
 const LoadingWrap = styled.div`
   margin-top: 80px;
   text-align: center;
   font-size: 1.2rem;
+  img {
+    width: 60px;
+    height: 60px;
+    margin: 30px auto;
+    object-fit: contain;
+    display: block;
+    -webkit-transform: rotate(45deg);
+  }
 `
 
 export default function Question() {
@@ -166,12 +185,25 @@ export default function Question() {
     <>
       <HelmetComponents title=":질문" />
       {isLoading ? (
-        <LoadingWrap>손님에게 맞는 인형을 골라 숨을 불어넣을게요.</LoadingWrap>
+        <LoadingWrap>
+          <img src={ic_portion} alt="avatar" className="animation-topdown" />
+          <span>
+            손님에게 맞는 인형을 골라
+            <br />
+            숨을 불어넣을게요.
+          </span>
+        </LoadingWrap>
       ) : (
         <div>
           <ProcessBar total={questionList.length} now={questionOrder} />
-          <QuestionBox>Q. {questionList[questionOrder]?.question} </QuestionBox>
+          <QuestionBox>
+            Q.
+            <br /> {questionList[questionOrder]?.question}{' '}
+          </QuestionBox>
+
           <AnswerBox>
+            A.
+            <br />
             {questionList[questionOrder]?.answer?.map((v, index) => (
               <button
                 onClick={() => {

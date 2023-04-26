@@ -53,7 +53,7 @@ export default function Store() {
   return (
     <>
       <HelmetComponents title=":모든 인형" />
-      <div className="usefont">
+      <div>
         <StyledTitle>가게의 모든 인형</StyledTitle>
         <StyledWrapper>
           {allResults &&

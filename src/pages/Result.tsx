@@ -99,7 +99,7 @@ export default function Result() {
   return (
     <>
       <HelmetComponents title=":결과" />
-      <WrapBox className="usefont">
+      <WrapBox>
         <TitleBox>{yourResult?.name}</TitleBox>
         <div className="profile">
           <ProfileImage mbti={params.id} />

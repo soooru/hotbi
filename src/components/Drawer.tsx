@@ -55,7 +55,7 @@ function Drawer() {
         <StyledNavHead>
           <MenuBtn clickEvent={onToggle} text="닫기" />
         </StyledNavHead>
-        <div className="menu-list ">
+        <div className="menu-list">
           <ul onClick={onToggle}>
             <StyledListItem>
               <NavLink to="/">처음으로</NavLink>

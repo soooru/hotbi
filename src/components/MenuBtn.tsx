@@ -20,11 +20,7 @@ const StyledMenuBtn = styled.button`
   background: #fff;
 `
 function MenuBtn({ clickEvent, text }: Props) {
-  return (
-    <StyledMenuBtn className="usefont" onClick={clickEvent}>
-      {text}
-    </StyledMenuBtn>
-  )
+  return <StyledMenuBtn onClick={clickEvent}>{text}</StyledMenuBtn>
 }
 
 export default MenuBtn

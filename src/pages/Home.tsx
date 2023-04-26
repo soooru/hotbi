@@ -1,9 +1,7 @@
 import HelmetComponents from 'components/HelmetComponents'
-import Button from 'components/Button'
 import { useState } from 'react'
 import styled from 'styled-components'
-import npcSom from 'assets/images/npc-som.jpg'
-import npcSol from 'assets/images/npc-sol.jpg'
+import ic_ball from 'assets/images/ic_ball.png'
 
 import { NavLink } from 'react-router-dom'
 
@@ -16,18 +14,13 @@ const StyledBox = styled.div`
     height: 100px;
     border-radius: 50px;
   }
-  article {
-    line-height: 1.2rem;
-    font-size: 1rem;
+  p {
+    padding-top: 40px;
+    line-height: 1.4rem;
+    font-size: 1.1rem;
     position: relative;
-    background: #f2f2f2;
-    padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    margin-top: 10px;
-    margin-bottom: 30px;
     span {
-      font-size: 0.9rem;
+      font-size: 1rem;
     }
   }
 `
@@ -35,9 +28,22 @@ const StyledArrow = styled.div`
   display: block;
   width: 0;
   height: 0;
-  border-left: 6px solid transparent;
-  border-top: 10px solid #666666;
-  border-right: 6px solid transparent;
+  border-bottom: 6px solid transparent;
+  border-top: 6px solid transparent;
+  border-left: 10px solid #666666;
+  border-right: 10px solid transparent;
+`
+
+const StyledBtn = styled.div`
+  background: #fff;
+  display: flex;
+  padding: 10px 20px;
+  border-radius: 8px;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin: 0px 10px;
+  margin-top: 30px;
 `
 
 export default function Home() {
@@ -45,46 +51,44 @@ export default function Home() {
 
   return (
     <>
-      <HelmetComponents title="" />
+      <HelmetComponents title="마법의 인형가게" />
       <StyledBox>
+        <img src={ic_ball} alt="avatar" />
         {step === 1 && (
           <div
             onClick={() => {
               setStep(2)
             }}
           >
-            <img src={npcSom} alt="avatar" />
-            <article>
-              어서오세요~ <br />
-              마법의 인형가게에 오신 걸 환영합니다. <br />
-              저희의 마법인형이 당신을 기다렸어요. <br />
-              잠시 머물다 가시겠어요? <br />
+            <p>
+              마법의 인형가게에 <br /> 오신 걸 환영합니다.
               <br />
               <br />
+              마법인형이 당신을 기다렸어요.
+            </p>
+            <StyledBtn>
+              <StyledArrow className="animation-leftright"></StyledArrow>
               <span>다음으로</span>
-              <br />
-              <br />
-              <StyledArrow className="animation-topdown"></StyledArrow>
-            </article>
+            </StyledBtn>
           </div>
         )}
         {step === 2 && (
           <div>
-            <img src={npcSol} alt="avatar" />
-            <article>
-              저희 가게의 인형들은 좀 특별해요. <br />
-              마법을 통해 영혼을 갖게 된 존재들이거든요. <br />
-              각자 고유의 개성과 매력을 가지고 있어요. <br />
+            <p>
+              이곳에는 마법으로 영혼을 갖게 된 <br /> 마법 인형들이 있습니다.
               <br />
-              이제부터 저희가 드리는 질문들에 솔직하게 답변해주시면, <br />
-              손님에게 맞는 마법인형을 찾아드릴게요. <br />
+              각자 고유의 개성과 매력을 가지고 있죠. <br />
               <br />
-              이런 마법인형과 친구가 되시면 하루하루가 즐거우실 거예요.
-            </article>
+              이제부터 저희가 드리는 질문에 대답한다면 <br />
+              당신의 단짝 마법 인형을 찾아드리죠. <br />
+            </p>
 
-            <Button mode="primary">
-              <NavLink to="question"> 인형 받으러 가기 </NavLink>
-            </Button>
+            <NavLink to="question">
+              <StyledBtn>
+                <StyledArrow className="animation-leftright"></StyledArrow>
+                <span>인형 받으러 가기</span>
+              </StyledBtn>
+            </NavLink>
           </div>
         )}
       </StyledBox>

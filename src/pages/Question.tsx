@@ -26,11 +26,15 @@ const QuestionBox = styled.div`
   font-size: 1.1rem;
   line-height: 1.4rem;
   padding: 20px 30px;
+  @media screen and (max-width: 500px) {
+    padding: 20px;
+  }
 `
 const AnswerBox = styled.div`
   padding: 20px 30px;
-  font-size: 1.1rem;
-  line-height: 1.4rem;
+  @media screen and (max-width: 500px) {
+    padding: 20px;
+  }
   button {
     font-size: 1.1rem;
     line-height: 1.4rem;
@@ -46,6 +50,11 @@ const AnswerBox = styled.div`
     border-bottom: 4px solid rgba(0, 0, 0, 0.21);
     border-radius: 4px;
     text-shadow: 0 1px 0 rgba(0, 0, 0, 0.15);
+    @media screen and (max-width: 500px) {
+      font-size: 0.9rem;
+      line-height: 1.4rem;
+      padding: 12px 8px;
+    }
   }
 `
 const LoadingWrap = styled.div`
@@ -196,14 +205,8 @@ export default function Question() {
       ) : (
         <div>
           <ProcessBar total={questionList.length} now={questionOrder} />
-          <QuestionBox>
-            Q.
-            <br /> {questionList[questionOrder]?.question}{' '}
-          </QuestionBox>
-
+          <QuestionBox>{questionList[questionOrder]?.question} </QuestionBox>
           <AnswerBox>
-            A.
-            <br />
             {questionList[questionOrder]?.answer?.map((v, index) => (
               <button
                 onClick={() => {

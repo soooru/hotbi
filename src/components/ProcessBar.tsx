@@ -9,7 +9,9 @@ interface Props {
 const ProcessWrap = styled.div`
   position: relative;
   padding: 40px;
-
+  @media screen and (max-width: 500px) {
+    padding: 40px 20px 30px;
+  }
   img {
     display: block;
     width: 50px;

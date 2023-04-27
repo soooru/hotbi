@@ -24,11 +24,13 @@ const TitleBox = styled.div`
 `
 const SubTitleBox = styled.div`
   font-size: 1.2rem;
-  margin-top: 50px;
   line-height: 1.4rem;
 `
 const WrapBox = styled.div`
-  padding: 10px 30px;
+  .content {
+    padding: 16px;
+    background: #fff;
+  }
   .profile {
     text-align: center;
   }
@@ -104,18 +106,20 @@ export default function Result() {
         <div className="profile">
           <ProfileImage mbti={params.id} />
         </div>
-        <SubTitleBox>{yourResult?.summary}</SubTitleBox>
-        <div
-          className="desc"
-          dangerouslySetInnerHTML={{ __html: yourResult.description }}
-        ></div>
-        <div
-          className="desc"
-          dangerouslySetInnerHTML={{ __html: yourResult.description2 }}
-        ></div>
-        <SubTitleBox>손님과 친할 것 같은 인형은...</SubTitleBox>
-        <br />
-        <div>{yourResult?.with}</div>
+        <div className="content">
+          <SubTitleBox>{yourResult?.summary}</SubTitleBox>
+          <div
+            className="desc"
+            dangerouslySetInnerHTML={{ __html: yourResult.description }}
+          ></div>
+          <div
+            className="desc"
+            dangerouslySetInnerHTML={{ __html: yourResult.description2 }}
+          ></div>
+          <SubTitleBox>손님과 친할 것 같은 인형은...</SubTitleBox>
+          <br />
+          <div>{yourResult?.with}</div>
+        </div>
         <div className="more-action">
           <button>
             <NavLink to="/question">다시 하기</NavLink>

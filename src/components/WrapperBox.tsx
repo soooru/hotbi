@@ -22,7 +22,8 @@ const StyledWrapper = styled.div<Props>`
   max-width: 500px;
   width: calc(100% - 20px);
   top: 24px;
-  overflow: auto;
+  overflow-y: auto;
+  overflow-x: hidden;
 `
 
 function WrapperBox({ children, ...props }: Props) {

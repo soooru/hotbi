@@ -185,7 +185,7 @@ a:active {
   height: 5px;
 }
 *::-webkit-scrollbar-track {
-  background: red;
+  background: transparent;
 }
 
 .menu-list {

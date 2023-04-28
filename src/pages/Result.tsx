@@ -41,6 +41,11 @@ const ProfileBg = styled.div`
   background-image: linear-gradient(62deg, #fbab7e 0%, #f7ce68 100%);
 `
 const WrapBox = styled.div`
+  .share {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
   .content {
     padding: 16px 20px;
   }
@@ -148,6 +153,9 @@ export default function Result() {
       <HelmetComponents title=":결과" />
       <WrapBox>
         <ProfileBg />
+        <div className="share">
+          <ShareButton result={yourResult?.name} />
+        </div>
         <div className="profile">
           <ProfileImage mbti={params.id} />
           <TitleBox>{yourResult?.name}</TitleBox>
@@ -177,7 +185,6 @@ export default function Result() {
           >
             <span>페이지 주소 복사하기</span>
           </button>
-          <ShareButton result={yourResult?.name} />
         </div>
       </WrapBox>
       <Toast text={toastText} active={toastState} />

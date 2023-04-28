@@ -18,7 +18,7 @@ function ShareButton({ result }: Props) {
 
   return (
     <button onClick={() => shareKakao(result)}>
-      <span>카카오톡으로 공유하기</span>
+      <span>카</span>
     </button>
   )
 }

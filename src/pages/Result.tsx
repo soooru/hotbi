@@ -6,6 +6,7 @@ import styled from 'styled-components'
 import Toast from 'components/Toast'
 import ShareButton from 'components/ShareButton'
 import ProfileImage from 'components/ProfileImage'
+import ic_ball from 'assets/images/ic_ball.png'
 
 interface result {
   name?: string
@@ -17,26 +18,70 @@ interface result {
 
 const TitleBox = styled.div`
   font-size: 1.4rem;
-  margin: 20px 0px;
   line-height: 1.5rem;
   font-weight: 500;
   text-align: center;
 `
 const SubTitleBox = styled.div`
-  font-size: 1.2rem;
+  font-size: 1rem;
   line-height: 1.4rem;
+  padding: 12px 0px;
+  @media screen and (max-width: 500px) {
+    font-size: 0.9rem;
+  }
+  color: #666;
+`
+const ProfileBg = styled.div`
+  width: 100%;
+  height: 300px;
+  border-radius: 0 0 150px 150px;
+  position: absolute;
+  top: 0px;
+  background-color: #fbab7e;
+  background-image: linear-gradient(62deg, #fbab7e 0%, #f7ce68 100%);
 `
 const WrapBox = styled.div`
   .content {
-    padding: 16px;
-    background: #fff;
+    padding: 16px 20px;
+  }
+  .star {
+    font-size: 0.9rem;
+    color: #666;
+    padding: 20px 0px;
+    border-top: 1px dashed #929292;
+    margin-top: 10px;
   }
   .profile {
+    position: relative;
+    margin: 0px auto;
+    background: #fff;
+    border-radius: 59px 50px 0px 0px;
+    width: calc(100% - 30px);
     text-align: center;
+    margin-top: 80px;
+    img {
+      width: 250px;
+      height: 250px;
+      margin-top: -100px;
+    }
   }
   .desc {
     margin-top: 20px;
-    line-height: 1.2rem;
+    line-height: 1.4rem;
+  }
+  .content {
+    position: relative;
+  }
+  .best-friends {
+    margin-top: 40px;
+    text-align: center;
+    img {
+      width: 40px;
+      height: 40px;
+    }
+    div {
+      margin: 10px 0px;
+    }
   }
   .more-action {
     margin-top: 60px;
@@ -102,23 +147,24 @@ export default function Result() {
     <>
       <HelmetComponents title=":결과" />
       <WrapBox>
-        <TitleBox>{yourResult?.name}</TitleBox>
+        <ProfileBg />
         <div className="profile">
           <ProfileImage mbti={params.id} />
+          <TitleBox>{yourResult?.name}</TitleBox>
+          <SubTitleBox>{yourResult?.summary}</SubTitleBox>
+          <div className="star">다정함 ⭐️⭐️⭐️⭐️⭐️ 이해심 🌸🌸🌸🌸🌸 </div>
         </div>
         <div className="content">
-          <SubTitleBox>{yourResult?.summary}</SubTitleBox>
           <div
             className="desc"
             dangerouslySetInnerHTML={{ __html: yourResult.description }}
           ></div>
-          <div
-            className="desc"
-            dangerouslySetInnerHTML={{ __html: yourResult.description2 }}
-          ></div>
-          <SubTitleBox>손님과 친할 것 같은 인형은...</SubTitleBox>
           <br />
-          <div>{yourResult?.with}</div>
+          <div className="best-friends">
+            <img src={ic_ball} alt="avatar" />
+            <div>찰떡궁합 친구</div>
+            {yourResult?.with}
+          </div>
         </div>
         <div className="more-action">
           <button>

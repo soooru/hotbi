@@ -51,7 +51,7 @@ export default function Home() {
 
   return (
     <>
-      <HelmetComponents title="마법의 인형가게" />
+      <HelmetComponents title="" />
       <StyledBox>
         <img src={ic_ball} alt="avatar" />
         {step === 1 && (

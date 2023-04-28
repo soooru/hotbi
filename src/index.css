@@ -112,6 +112,7 @@ video {
   border: 0;
   font-size: 100%;
   vertical-align: baseline;
+  word-break: keep-all;
 }
 article,
 aside,

@@ -14,15 +14,12 @@ const StyledButton = styled.button<Props>`
     props.mode === 'primary' &&
     css`
       color: white;
-      background: #9c27b0;
-      border-color: #9c27b0;
+      background: #00b0c6;
+      border-color: #00b0c6;
       a {
         color: white;
         display: block;
         padding: 10px 12px;
-      }
-      :hover {
-        background: #7b1fa2;
       }
     `}
 `

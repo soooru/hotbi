@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
 import { shareKakao } from 'utils/ShareKakaoTalk'
+import ic_kakao from 'assets/images/ic_kakao.png'
 
 interface Props {
   result?: string
@@ -18,7 +19,7 @@ function ShareButton({ result }: Props) {
 
   return (
     <button onClick={() => shareKakao(result)}>
-      <span>카</span>
+      <img src={ic_kakao} alt="avatar" />
     </button>
   )
 }

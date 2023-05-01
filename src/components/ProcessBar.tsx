@@ -19,7 +19,7 @@ const ProcessWrap = styled.div`
     transform: rotate(30deg);
     position: absolute;
     top: 18px;
-    right: 15px;
+    right: 5px;
   }
 `
 const ProcessBox = styled.div<{ process: number }>`

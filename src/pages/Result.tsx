@@ -7,6 +7,7 @@ import Toast from 'components/Toast'
 import ShareButton from 'components/ShareButton'
 import ProfileImage from 'components/ProfileImage'
 import ic_ball from 'assets/images/ic_ball.png'
+import ic_copy from 'assets/images/ic_copy.png'
 
 interface result {
   name?: string
@@ -41,11 +42,6 @@ const ProfileBg = styled.div`
   background-image: linear-gradient(62deg, #fbab7e 0%, #f7ce68 100%);
 `
 const WrapBox = styled.div`
-  .share {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-  }
   .content {
     padding: 16px 20px;
   }
@@ -92,10 +88,10 @@ const WrapBox = styled.div`
     margin-top: 60px;
     button {
       display: block;
+      background: #fff;
       width: 80%;
       margin: 0 auto;
       padding: 0px;
-      margin-bottom: 20px;
       border-radius: 16px;
       a,
       span {
@@ -103,6 +99,25 @@ const WrapBox = styled.div`
         height: 100%;
         display: block;
         padding: 16px 0px;
+      }
+    }
+  }
+  .share {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0px;
+    button {
+      padding: 0px;
+      width: 40px;
+      border: none;
+      height: 40px;
+      border-radius: 50px;
+      margin: 0px 5px;
+      img {
+        width: 100%;
+        height: 100%;
       }
     }
   }
@@ -121,7 +136,7 @@ export default function Result() {
     try {
       await navigator.clipboard.writeText(text)
 
-      setToastText('복사 완료, 인형 가게를 공유해 주세요.')
+      setToastText('복사 완료')
     } catch (error) {
       setToastText('복사에 실패하였습니다.')
     } finally {
@@ -150,12 +165,11 @@ export default function Result() {
 
   return (
     <>
-      <HelmetComponents title=":결과" />
+      <HelmetComponents
+        title={yourResult?.name ? `: ${yourResult.name}` : ':결과'}
+      />
       <WrapBox>
         <ProfileBg />
-        <div className="share">
-          <ShareButton result={yourResult?.name} />
-        </div>
         <div className="profile">
           <ProfileImage mbti={params.id} />
           <TitleBox>{yourResult?.name}</TitleBox>
@@ -178,16 +192,19 @@ export default function Result() {
           <button>
             <NavLink to="/question">다시 하기</NavLink>
           </button>
+        </div>
+        <div className="share">
+          <Toast text={toastText} active={toastState} />
+          <ShareButton result={yourResult?.name} />
           <button
             onClick={(e: any) => {
               handleCopyClipBoard(window.location.href)
             }}
           >
-            <span>페이지 주소 복사하기</span>
+            <img src={ic_copy} alt="copy" />
           </button>
         </div>
       </WrapBox>
-      <Toast text={toastText} active={toastState} />
     </>
   )
 }

@@ -14,6 +14,8 @@ interface result {
   summary?: string
   description: string
   description2: string
+  pros?: string
+  cons?: string
   with?: string
 }
 
@@ -174,7 +176,9 @@ export default function Result() {
           <ProfileImage mbti={params.id} />
           <TitleBox>{yourResult?.name}</TitleBox>
           <SubTitleBox>{yourResult?.summary}</SubTitleBox>
-          <div className="star">다정함 ⭐️⭐️⭐️⭐️⭐️ 이해심 🌸🌸🌸🌸🌸 </div>
+          <div className="star">
+            {yourResult.pros} {yourResult.cons}
+          </div>
         </div>
         <div className="content">
           <div

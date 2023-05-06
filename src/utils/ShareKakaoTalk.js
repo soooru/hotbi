@@ -8,7 +8,6 @@ export const shareKakao = ({ result, desc, mbti }) => {
 
     kakao.Share.sendDefault({
       objectType: 'feed',
-      text: `마법의 인형가게`,
       content: {
         title: `나의 인형은 : ${result}`,
         description: desc,
@@ -17,6 +16,15 @@ export const shareKakao = ({ result, desc, mbti }) => {
           mobileWebUrl: window.location.href,
           webUrl: window.location.href,
         },
+        buttons: [
+          {
+            title: '자세히 보기',
+            link: {
+              mobileWebUrl: window.location.href,
+              webUrl: window.location.href,
+            },
+          },
+        ],
       },
     })
   }

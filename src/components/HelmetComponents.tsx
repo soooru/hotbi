@@ -29,16 +29,8 @@ export default function HelmetComponents(props: {
         {props.title}
       </title>
       <meta property="og:title" content={appName + props.title} />
-      <meta
-        property="og:description"
-        content="마법의 인형가게에서 당신의 인형을 만나세요"
-      />
       <meta property="og:image" content={props.image ? customImg : ogImage} />
       <meta property="twitter:title" content={appName + props.title} />
-      <meta
-        property="twitter:description"
-        content="마법의 인형가게에서 당신의 인형을 만나세요"
-      />
       <meta
         property="twitter:image"
         content={props.image ? customImg : ogImage}

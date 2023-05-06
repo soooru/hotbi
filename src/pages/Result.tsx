@@ -169,6 +169,7 @@ export default function Result() {
     <>
       <HelmetComponents
         title={yourResult?.name ? `: ${yourResult.name}` : ':결과'}
+        image={params.id}
       />
       <WrapBox>
         <ProfileBg />
@@ -199,7 +200,11 @@ export default function Result() {
         </div>
         <div className="share">
           <Toast text={toastText} active={toastState} />
-          <ShareButton result={yourResult?.name} />
+          <ShareButton
+            result={yourResult?.name}
+            desc={yourResult?.pros}
+            mbti={params?.id}
+          />
           <button
             onClick={(e: any) => {
               handleCopyClipBoard(window.location.href)

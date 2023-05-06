@@ -1,13 +1,16 @@
 import { Helmet } from 'react-helmet-async'
 import { useContext } from 'react'
-import ogImage from 'assets/images/ic_ball.png'
 
 import { AppInfo } from 'contexts/AppInfo'
+import ogImage from 'assets/images/ic_ball.png'
+
 export default function HelmetComponents(props: {
   title: string
   image?: string
 }) {
   const { appName } = useContext(AppInfo)
+
+  const customImg = `${window.location.origin}/images/${props.image}.png`
 
   return (
     <Helmet>
@@ -17,7 +20,7 @@ export default function HelmetComponents(props: {
       </title>
       <meta property="og:title" content={appName + props.title} />
       <meta property="og:description" content="마법의 인형가게" />
-      <meta property="og:image" content={props.image ?? ogImage} />
+      <meta property="og:image" content={props.image ? customImg : ogImage} />
     </Helmet>
   )
 }

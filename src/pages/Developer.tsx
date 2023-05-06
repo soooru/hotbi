@@ -25,13 +25,15 @@ export default function Developer() {
         <div className="developer">
           <div className="nickname">배구리</div>
           <div>
-            고양이를 모시는 기획자 <br />
-            다정한 울보 오리 인형을 데리고 있다.
+            컨셉 기획자. 요새 할 게임이 많아 잠이 부족하다. <br />
+            다정한 울보 오리 인형 보유.
           </div>
         </div>
         <div className="developer">
-          <div className="nickname">정이</div>
-          <div>야근이 싫은 도트그래픽디자이너</div>
+          <div className="nickname">유코니</div>
+          <div>
+            디쟌. 인형 러버. <br /> 잘 안 보인다.
+          </div>
         </div>
       </StyledWrapper>
     </>

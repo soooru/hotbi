@@ -3,10 +3,12 @@ import { shareKakao } from 'utils/ShareKakaoTalk'
 import ic_kakao from 'assets/images/ic_kakao.png'
 
 interface Props {
-  result?: string
+  result: any
+  desc: any
+  mbti: any
 }
 
-function ShareButton({ result }: Props) {
+function ShareButton(result: Props) {
   useEffect(() => {
     const script = document.createElement('script')
     script.src = 'https://developers.kakao.com/sdk/js/kakao.js'

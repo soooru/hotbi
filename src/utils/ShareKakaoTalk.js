@@ -1,4 +1,4 @@
-export const shareKakao = (text) => {
+export const shareKakao = ({ result, desc, mbti }) => {
   // url이 id값에 따라 변경되기 때문에 route를 인자값으로 받아줌
   if (window.Kakao) {
     const kakao = window.Kakao
@@ -7,11 +7,16 @@ export const shareKakao = (text) => {
     }
 
     kakao.Share.sendDefault({
-      objectType: 'text',
-      text: `마법의 인형가게 : ${text}`,
-      link: {
-        mobileWebUrl: window.location.href,
-        webUrl: window.location.href,
+      objectType: 'feed',
+      text: `마법의 인형가게`,
+      content: {
+        title: `나의 인형은 : ${result}`,
+        description: desc,
+        imageUrl: `${window.location.origin}/images/${mbti}.png`,
+        link: {
+          mobileWebUrl: window.location.href,
+          webUrl: window.location.href,
+        },
       },
     })
   }

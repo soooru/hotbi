@@ -10,7 +10,7 @@ export const shareKakao = ({ result, desc, mbti }) => {
       objectType: 'feed',
       content: {
         title: `나의 인형은 : ${result}`,
-        description: desc,
+        description: `마법의 인형가게에서 당신의 인형을 만나세요. 나의 인형은 ${result}, ${desc}`,
         imageUrl: `${window.location.origin}/images/${mbti}.png`,
         link: {
           mobileWebUrl: window.location.href,

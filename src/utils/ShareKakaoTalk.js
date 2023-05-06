@@ -16,16 +16,16 @@ export const shareKakao = ({ result, desc, mbti }) => {
           mobileWebUrl: window.location.href,
           webUrl: window.location.href,
         },
-        buttons: [
-          {
-            title: '자세히 보기',
-            link: {
-              mobileWebUrl: window.location.href,
-              webUrl: window.location.href,
-            },
-          },
-        ],
       },
+      buttons: [
+        {
+          title: '자세히 보기',
+          link: {
+            mobileWebUrl: window.location.href,
+            webUrl: window.location.href,
+          },
+        },
+      ],
     })
   }
 }

@@ -2,7 +2,7 @@ import { Helmet } from 'react-helmet-async'
 import { useContext } from 'react'
 
 import { AppInfo } from 'contexts/AppInfo'
-import ogImage from 'assets/images/ic_ball.png'
+import ogImage from 'assets/images/ogimage.png'
 
 export default function HelmetComponents(props: {
   title: string

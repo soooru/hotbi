@@ -1,3 +1,5 @@
+import { resolve } from 'path'
+
 interface Props {
   mbti?: string
 }
@@ -5,19 +7,27 @@ interface Props {
 function ProfileImage({ mbti }: Props) {
   const isImage = () => {
     try {
-      const profile = require(`../assets/images/${mbti}.png`)
-      if (profile) {
-        return true
-      }
-      throw new Error('0')
+      if (!mbti) return false
+      return new Promise((resolve, reject) => {
+        const img = new Image()
+        img.src = `https://www.magic-teddy.net/images/${mbti}.png`
+
+        img.onload = function () {
+          resolve(true)
+        }
+        img.onerror = function () {
+          resolve(false)
+        }
+      })
     } catch (error) {
       return false
     }
   }
 
+  console.log('isImage', isImage())
   return isImage() ? (
     <img
-      src={require(`../assets/images/${mbti}.png`)}
+      src={`https://www.magic-teddy.net/images/${mbti}.png`}
       alt="mbti charactor profile"
       onError={(event) =>
         ((event.target as HTMLInputElement).style.display = 'none')

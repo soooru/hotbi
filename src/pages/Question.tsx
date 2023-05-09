@@ -43,7 +43,7 @@ const AnswerBox = styled.div`
     width: 100%;
     text-decoration: none;
     color: white;
-    padding: 12px 20px;
+    padding: 20px;
     display: inline-block;
     position: relative;
     border: 1px solid rgba(0, 0, 0, 0.21);
@@ -51,10 +51,10 @@ const AnswerBox = styled.div`
     border-radius: 4px;
     text-shadow: 0 1px 0 rgba(0, 0, 0, 0.15);
     word-break: keep-all;
+    white-space: break-spaces;
     @media screen and (max-width: 500px) {
       font-size: 0.9rem;
       line-height: 1.4rem;
-      padding: 12px 8px;
     }
   }
 `

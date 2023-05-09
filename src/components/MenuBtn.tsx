@@ -9,8 +9,8 @@ const StyledMenuBtn = styled.button`
   display: block;
   padding: 12px 24px;
   position: absolute;
-  left: 0;
-  top: 0;
+  left: -2px;
+  top: -2px;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.15);
   border-radius: 8px 0 26px;
   font-weight: 700;
